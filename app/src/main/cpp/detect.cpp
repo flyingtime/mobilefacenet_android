@@ -5,6 +5,7 @@ created by L. 2018.05.16
 #include"detect.h"
 #include <algorithm>
 #include <map>
+#include <math.h>
 
 namespace Face {
 

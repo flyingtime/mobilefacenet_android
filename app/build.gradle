@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
+        //编译该版本使用的是ndk 16，可以在local.properties中显示指定
+        //ndk.dir=/Users/FlyingtimeICE/Library/Android/sdk/ndk/16.1.4479499
         applicationId "com.example.l.mobilefacenet"
         minSdkVersion 15
         targetSdkVersion 26
@@ -12,6 +14,7 @@ android {
         ndk {
             abiFilters 'armeabi-v7a' //,'x86', 'x86_64', 'armeabi', 'arm64-v8a'
             stl "gnustl_static"
+            //stl = "c++_shared"
         }
         externalNativeBuild {
             cmake {
@@ -20,6 +23,7 @@ android {
                 cppFlags "-fopenmp -O2 -fvisibility=hidden -fvisibility-inlines-hidden -fomit-frame-pointer -fstrict-aliasing -ffunction-sections -fdata-sections -ffast-math "
                 cppFlags ""
                 cppFlags "-std=c++11"
+                //arguments "-DANDROID_STL=c++_static"
                 cppFlags "-frtti"
                 cppFlags "-fexceptions"
             }

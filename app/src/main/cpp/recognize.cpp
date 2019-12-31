@@ -3,6 +3,7 @@ created by L. 2018.05.16
 */
 
 #include "recognize.h"
+#include <math.h>
 
 namespace Face {
 
